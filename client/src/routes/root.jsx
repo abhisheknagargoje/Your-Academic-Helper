@@ -4,9 +4,9 @@ import Heading from "../components/Heading";
 
 const root = () => {
   return (
-    <div>
-      <Heading />
+    <div className=" bg-gray-900">
       <Navbar />
+      <Heading />
     </div>
   );
 };

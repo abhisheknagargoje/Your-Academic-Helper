@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 let doubtSchema = new mongoose.Schema({
   title: { type: String },
   content: { type: String },
-  authorId: { type: String },
+  author: { type: String },
+  authorId: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
   answered: { type: Boolean },
   votes: { type: Number },
   subject: { type: String },
