@@ -7,6 +7,7 @@ import meetings from "./routes/meetings";
 import signUp from "./routes/signUp";
 import signIn from "./routes/signIn";
 import answersPage from "./routes/answersPage";
+import createDoubt from "./routes/createDoubt";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/meetings" Component={meetings} />
         <Route path="/signUp" Component={signUp} />
         <Route path="/signIn" Component={signIn} />
+        <Route path="/doubts/createDoubt" Component={createDoubt} />
         <Route path="/doubts/:id" Component={answersPage} />
       </Routes>
     </Router>
