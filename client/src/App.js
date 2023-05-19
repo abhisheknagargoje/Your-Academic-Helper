@@ -8,6 +8,7 @@ import signUp from "./routes/signUp";
 import signIn from "./routes/signIn";
 import answersPage from "./routes/answersPage";
 import createDoubt from "./routes/createDoubt";
+import EventPage from "./routes/eventPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/signIn" Component={signIn} />
         <Route path="/doubts/createDoubt" Component={createDoubt} />
         <Route path="/doubts/:id" Component={answersPage} />
+        <Route path="/meetings/:eventId" Component={EventPage} />
       </Routes>
     </Router>
   );
