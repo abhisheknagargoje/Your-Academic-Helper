@@ -13,16 +13,7 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { title, content, authorId, answered, votes, subject, unit } = req.body;
-  const newDoubt = new doubtModel({
-    title,
-    content,
-    authorId,
-    answered,
-    votes,
-    subject,
-    unit,
-  });
+  const newDoubt = new doubtModel(req.body);
   await newDoubt.save();
 
   res.json({ message: "New doubt created Successfully!" });
@@ -37,6 +28,5 @@ router.get("/:id", async (req, res) => {
     console.error(err);
   }
 });
-
 
 module.exports.DoubtRouter = router;

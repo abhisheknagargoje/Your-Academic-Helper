@@ -1,6 +1,8 @@
 import { useState } from "react";
 import InputField from "../components/InputField";
 import Navbar from "../components/Navbar";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CreateDoubt = () => {
   const authorId = localStorage.getItem("userID");
@@ -19,6 +21,19 @@ const CreateDoubt = () => {
     });
   };
 
+  const navigate = useNavigate();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      await axios.post("http://localhost:3001/doubts/", doubt);
+      alert("Doubt created successfully!");
+      navigate("/doubts");
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <div className=" h-screen bg-gray-900 ">
       <Navbar />
@@ -26,7 +41,7 @@ const CreateDoubt = () => {
         <h3 className="text-3xl mb-4 font-bold dark:text-white">
           Ask Your Doubt
         </h3>
-        <form>
+        <form onSubmit={handleSubmit}>
           <InputField
             title="Title"
             value={doubt.title}

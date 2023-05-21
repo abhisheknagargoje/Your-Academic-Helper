@@ -1,5 +1,4 @@
 import axios from "axios";
-import LinkButton from "./LinkButton";
 import { useEffect, useState } from "react";
 
 const AnswerBox = ({ doubtId }) => {
@@ -17,10 +16,9 @@ const AnswerBox = ({ doubtId }) => {
       }
     };
     getDoubt();
+  }, [doubtId]);
 
-  }, []);
-
-  const { title, content, subject, unit, _id } = doubt;
+  const { title, content, _id } = doubt;
   const base = window.location.origin;
   const answerPageLink = `${base}/doubts/${_id}`;
 
