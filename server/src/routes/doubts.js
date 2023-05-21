@@ -29,4 +29,13 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+router.post("/:id", async (req, res) => {
+  const { id } = req.params;
+  // const answer = new answerModel({...req.body, });
+  const answer = new answerModel(req.body);
+  await answer.save();
+
+  res.json({ message: "Answer created successfully" });
+});
+
 module.exports.DoubtRouter = router;

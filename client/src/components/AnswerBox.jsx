@@ -1,8 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import AnswerList from "./AnswerList";
 
 const AnswerBox = ({ doubtId }) => {
   const [doubt, setDoubt] = useState({});
+  const [answer, setAnswer] = useState("");
+  const solverId = localStorage.getItem("userID");
 
   useEffect(() => {
     const getDoubt = async () => {
@@ -18,22 +21,36 @@ const AnswerBox = ({ doubtId }) => {
     getDoubt();
   }, [doubtId]);
 
-  const { title, content, _id } = doubt;
-  const base = window.location.origin;
-  const answerPageLink = `${base}/doubts/${_id}`;
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      await axios.post(`http://localhost:3001/doubts/${doubtId}`, {
+        content: answer,
+        author: authorId,
+        solverId: solverId,
+        doubtId: doubtId,
+      });
+    } catch (err) {
+      console.error(err);
+    }
+    setAnswer("");
+  };
+
+  const { title, content, authorId } = doubt;
 
   return (
     <div className="max-w-full mb-2 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <a href={answerPageLink}>
+      <div>
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {title}
         </h5>
-      </a>
+      </div>
       <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
         {content}
       </p>
       <div className=" mt-6">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
             <div className="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
               <label htmlFor="comment" className="sr-only">
@@ -44,6 +61,8 @@ const AnswerBox = ({ doubtId }) => {
                 rows="4"
                 className="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400"
                 placeholder="Write your answer..."
+                value={answer}
+                onChange={(e) => setAnswer(e.target.value)}
                 required
               ></textarea>
             </div>
@@ -58,6 +77,8 @@ const AnswerBox = ({ doubtId }) => {
           </div>
         </form>
       </div>
+
+      <AnswerList doubtId={doubtId} />
     </div>
   );
 };
