@@ -6,9 +6,9 @@ const InputField = ({ title, onChange }) => {
   };
 
   return (
-    <div class="mb-6">
+    <div className="mb-6">
       <label
-        for="default-input"
+        htmlFor="default-input"
         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
       >
         {title}

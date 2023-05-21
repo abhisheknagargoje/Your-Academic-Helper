@@ -4,7 +4,7 @@ import AnswerBox from "../components/AnswerBox";
 
 const AnswersPage = () => {
   const { id } = useParams();
-  console.log(useParams());
+
   return (
     <div className=" h-screen bg-slate-900">
       <Navbar />

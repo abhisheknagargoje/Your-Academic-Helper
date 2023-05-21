@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Event = require("../models/Events");
+const { v4: uuidv4 } = require("uuid");
 
 // Create event
 router.post("/", async (req, res) => {
@@ -66,6 +67,30 @@ router.delete("/:id", async (req, res) => {
     res.sendStatus(204);
   } catch (err) {
     res.status(500).json({ error: err.message });
+  }
+});
+
+// Generate a unique Jitsi Meet URL for an event
+router.get("/:eventId/meet", async (req, res) => {
+  const { eventId } = req.params;
+  const meetUrl = `https://meet.jit.si/${eventId}`;
+
+  try {
+    // Find the event by eventId
+    const event = await Event.findById(eventId);
+
+    if (!event) {
+      return res.status(404).json({ error: "Event not found" });
+    }
+
+    // Update the event's meetUrl
+    event.meetUrl = meetUrl;
+    await event.save();
+
+    res.json({ meetUrl: event.meetUrl });
+  } catch (error) {
+    console.error("Error updating event:", error);
+    res.status(500).json({ error: "Failed to update event" });
   }
 });
 

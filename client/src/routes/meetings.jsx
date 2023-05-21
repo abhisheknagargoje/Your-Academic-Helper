@@ -84,6 +84,14 @@ const Meetings = () => {
             onChange={handleInputChange}
             className="border rounded px-2 py-1 ml-2"
           />
+          <input
+            type="text"
+            name="location"
+            value={newEvent.location}
+            onChange={handleInputChange}
+            placeholder="Event location"
+            className="border rounded px-2 py-1 ml-2"
+          />
           <button
             type="submit"
             className="bg-blue-500 text-white rounded px-4 py-1 ml-2"
