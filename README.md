@@ -59,42 +59,32 @@ These are the credentials of your MongoDB account for connecting the database
 
 Home page
 
-![App Screenshot](https://drive.google.com/uc?id=1UwaVH4t1N4EXvt-yAEl64F_pJjyB9wKZ)
+![Screenshot (49)](https://github.com/abhisheknagargoje/Your-Academic-Helper/assets/91834248/764a76ad-24ec-4221-ad5a-8c6d90a2b501)
 
 Sign Up page
 
-![App Screenshot](https://drive.google.com/uc?id=1KjszUH2QAgogdlmBSaO-1a1W7mmQHfFt)
+![Screenshot (50)](https://github.com/abhisheknagargoje/Your-Academic-Helper/assets/91834248/17101f87-9c5f-4816-b8d4-5ddc019b3d59)
 
 Sign In page
 
-![App Screenshot](https://drive.google.com/uc?id=1QlpKtkxjNAqLxvPLtgmXkV5K1vGKzmQq)
+![Screenshot (51)](https://github.com/abhisheknagargoje/Your-Academic-Helper/assets/91834248/2e324e9d-45cf-472e-86f0-b432a847b3ed)
 
 ###
 
 Doubts page
 
-![App Screenshot](https://drive.google.com/uc?id=1vfn1-4x7T8Rvfm8bSRtiou5akeWBZOd7)
+![Screenshot (52)](https://github.com/abhisheknagargoje/Your-Academic-Helper/assets/91834248/f6c8b61b-6e6f-4b9e-abbe-9f06b196052e)
 
-![App Screenshot](https://drive.google.com/uc?id=1o6bV7YHQ22_mO2ShxMkfZxcMwdwYCL9m)
+![Screenshot (54)](https://github.com/abhisheknagargoje/Your-Academic-Helper/assets/91834248/c963aeca-34e3-4f84-b1d4-4008318c75e0)
 
-![App Screenshot](https://drive.google.com/uc?id=1UT0dhJiPNH4HFfmJxUxkUxsfThxh5mWx)
+![Screenshot (61)](https://github.com/abhisheknagargoje/Your-Academic-Helper/assets/91834248/a761bef9-311c-489c-b63e-1b5fc5b97856)
 
 ###
 
 Meetings page
 
-![App Screenshot](https://drive.google.com/uc?id=1W-BJplw6mZNXKgg-tdigCOmhs5d6g-Wv)
+![Screenshot (55)](https://github.com/abhisheknagargoje/Your-Academic-Helper/assets/91834248/d603a68d-d585-473d-b023-73ffa3e8b855)
 
-![App Screenshot](https://drive.google.com/uc?id=1EG6pIoAWw0rcvL-jcaJxNLJf0mc7_Xfm)
+![Screenshot (58)](https://github.com/abhisheknagargoje/Your-Academic-Helper/assets/91834248/520d589d-d1e8-40e0-a87f-a6e7bff3b74e)
 
-![App Screenshot](https://drive.google.com/uc?id=1YtEjjhvzt8DDba4vCydRLuXd_-okQEvX)
-
-![App Screenshot](https://drive.google.com/uc?id=1YmXqMIFHq0PtODuaPZ0gBjRbaMbM5joH)
-
-### 
-
-About page
-
-![App Screenshot](https://drive.google.com/uc?id=1BQw1oy8acS6-F22xUSTUGW-D4RDofLw-)
-
-###
+![Screenshot (59)](https://github.com/abhisheknagargoje/Your-Academic-Helper/assets/91834248/0a4ec26d-f25d-4066-b72d-4009483b982d)
