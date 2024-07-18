@@ -10,7 +10,9 @@ const DoubtsPage = () => {
 
   useEffect(() => {
     const getAllDoubts = async () => {
-      const response = await axios.get("http://localhost:3001/doubts");
+      const response = await axios.get(
+				`${process.env.REACT_APP_API_URL}/doubts`
+			);
       setDoubts(response.data);
     };
 
@@ -19,7 +21,7 @@ const DoubtsPage = () => {
 
   const createDoubtLink = `${window.location.origin}/doubts/createDoubt`;
   return (
-    <div className=" h-screen bg-gray-900">
+    <div className="h-full bg-gray-900">
       <Navbar />
       <div className="w-2/3 mx-auto m-2">
         <LinkButton text="Create Doubt" link={createDoubtLink} />

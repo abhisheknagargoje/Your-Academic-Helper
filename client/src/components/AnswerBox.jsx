@@ -10,9 +10,7 @@ const AnswerBox = ({ doubtId }) => {
   useEffect(() => {
     const getDoubt = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:3001/doubts/${doubtId}`
-        );
+        const response = await axios.get(`${process.env.API_URL}/doubts/${doubtId}`);
         setDoubt(response.data);
       } catch (err) {
         console.error(err);
@@ -25,12 +23,12 @@ const AnswerBox = ({ doubtId }) => {
     event.preventDefault();
 
     try {
-      await axios.post(`http://localhost:3001/doubts/${doubtId}`, {
-        content: answer,
-        author: authorId,
-        solverId: solverId,
-        doubtId: doubtId,
-      });
+      await axios.post(`${process.env.API_URL}/doubts/${doubtId}`, {
+				content: answer,
+				author: authorId,
+				solverId: solverId,
+				doubtId: doubtId,
+			});
     } catch (err) {
       console.error(err);
     }

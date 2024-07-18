@@ -17,16 +17,16 @@ const SignUp = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:3001/auth/register", {
-        username,
-        password,
-        firstName,
-        lastName,
-        phoneNumber,
-        classDiv,
-        year,
-        email,
-      });
+      await axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, {
+				username,
+				password,
+				firstName,
+				lastName,
+				phoneNumber,
+				classDiv,
+				year,
+				email,
+			});
       alert("User registered Successfully! Now Sign In");
       navigate("/signIn");
     } catch (err) {

@@ -11,7 +11,7 @@ const Meetings = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch("http://localhost:3001/events");
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/events`);
         const data = await response.json();
         const formattedEvents = data.map((event) => ({
           id: event._id,
@@ -37,13 +37,13 @@ const Meetings = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3001/events", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newEvent),
-      });
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/events`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(newEvent),
+			});
       const createdEvent = await response.json();
       setEvents([...events, createdEvent]);
       setNewEvent({ title: "", start: "", end: "" });

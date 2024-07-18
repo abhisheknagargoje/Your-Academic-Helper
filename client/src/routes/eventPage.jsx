@@ -11,7 +11,9 @@ const EventPage = () => {
   useEffect(() => {
     const fetchEvent = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/events/${eventId}`);
+        const response = await fetch(
+					`${process.env.REACT_APP_API_URL}/events/${eventId}`
+				);
         const eventData = await response.json();
         setEvent(eventData);
         setMeetUrl(eventData.meetUrl);
@@ -26,8 +28,8 @@ const EventPage = () => {
   const handleGenerateMeetLink = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:3001/events/${eventId}/meet`
-      );
+				`${process.env.REACT_APP_API_URL}/events/${eventId}/meet`
+			);
       const { meetUrl } = response.data;
       setMeetUrl(meetUrl);
     } catch (error) {

@@ -9,16 +9,16 @@ const AnswerList = ({ doubtId }) => {
   useEffect(() => {
     const getAnswers = async () => {
       const response = await axios.get(
-        `http://localhost:3001/answers/${doubtId}`
-      );
+				`${process.env.REACT_APP_API_URL}/answers/${doubtId}`
+			);
 
       setAnswers(response.data);
     };
 
     const getSolver = async () => {
       const response = await axios.get(
-        `http://localhost:3001/auth/${answers[0].solverId}`
-      );
+				`${process.env.REACT_APP_API_URL}/auth/${answers[0].solverId}`
+			);
       setSolver(response.data);
     };
 
